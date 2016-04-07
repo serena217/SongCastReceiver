@@ -81,7 +81,12 @@ limitations under the License.
 
     <script type="text/javascript">
         "use strict";
-
+			var receiver = new cast.receiver.Receiver(
+	    'EB13C549', [cast.receiver.RemoteMedia.NAMESPACE], "", 5);
+	var remoteMedia = new cast.receiver.RemoteMedia();
+	remoteMedia.addChannelFactory(
+	    receiver.createChannelFactory(cast.receiver.RemoteMedia.NAMESPACE));
+	    
         window.castReceiverManager = null;
         window.mediaManager = null;
         window.messageBus = null;
